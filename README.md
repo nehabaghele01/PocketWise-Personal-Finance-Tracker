@@ -31,10 +31,10 @@ PocketWise is a lightweight, responsive web application designed to help users m
 ## Screenshots  
 
 ### Dashboard  
-![Dashboard](./screenshot1.png)
+![Dashboard](Screenshot1.png)
 
 ### Expense Chart  
-![Expense Chart](./screenshot2.png)
+![Expense Chart](Screenshot2.png)
 
 
  
