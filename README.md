@@ -27,10 +27,14 @@ PocketWise is a lightweight, responsive web application designed to help users m
 | Chart.js   | Data Visualization |
 | LocalStorage | Data Persistence |
 
----
+
 ## 📸 Screenshots
 
-### 🧾 
-![Review it](screenshots/screenshot1)
+### 🧾 Add Transaction Form
+![Add Transaction Form](screenshot1.png)
+
+### 📊 Spending Overview
+![Spending Overview](screenshot2.png)
+
 
  
