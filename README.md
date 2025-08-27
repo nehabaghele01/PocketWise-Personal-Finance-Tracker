@@ -31,7 +31,6 @@ PocketWise is a lightweight, responsive web application designed to help users m
 ## 📸 Screenshots
 
 ### 🧾 
-![Review it](screenshots/logo.png)
+![Review it](screenshots/screenshot1)
 
-   ```bash
-   git clone https://github.com/your-username/pocketwise.git
+ 
