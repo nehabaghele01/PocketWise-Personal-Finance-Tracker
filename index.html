@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>PocketWise — Personal Finance Tracker</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.3.0/dist/chart.umd.min.js"></script>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="topbar">
+      <div class="brand">
+        <div class="logo" aria-hidden="true">
+          <img src="logo.png" alt="PocketWise Logo" class="logo-img" />
+        </div>
+        <div>
+          <h1>PocketWise</h1>
+          <p class="tag">Know your money. Control your future.</p>
+        </div>
+      </div>
+      <div class="top-actions">
+        <button id="themeBtn" class="btn outline" title="Toggle theme">🌓</button>
+        <button id="exportBtn" class="btn outline" title="Export CSV">
+          <i class="fa-solid fa-file-export"></i> Export CSV
+        </button>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="left-panel card">
+        <h2>Add Transaction</h2>
+        <form id="txnForm" class="txn-form" autocomplete="off">
+          <div class="row">
+            <label for="type">Type</label>
+            <select id="type">
+              <option value="income">Income</option>
+              <option value="expense">Expense</option>
+            </select>
+          </div>
+          <div class="row">
+            <label for="amount">Amount (₹)</label>
+            <input id="amount" type="number" step="0.01" required />
+          </div>
+          <div class="row">
+            <label for="category">Category</label>
+            <div class="category-row">
+              <input id="category" type="text" />
+              <button id="addQuick" type="button" class="btn small">+ Quick</button>
+            </div>
+            <div class="quick-cats" id="quickCats"></div>
+          </div>
+          <div class="row">
+            <label for="date">Date</label>
+            <input id="date" type="date" required />
+          </div>
+          <div class="row">
+            <label for="note">Note (optional)</label>
+            <input id="note" type="text" />
+          </div>
+          <div class="row actions">
+            <button type="submit" class="btn primary">Add Transaction</button>
+            <button id="clearBtn" type="button" class="btn outline">Clear</button>
+          </div>
+        </form>
+
+        <div class="stats">
+          <div class="stat card-small">
+            <small>Total Income</small>
+            <strong id="totalIncome">₹0</strong>
+          </div>
+          <div class="stat card-small">
+            <small>Total Expense</small>
+            <strong id="totalExpense">₹0</strong>
+          </div>
+          <div class="stat card-small">
+            <small>Net Balance</small>
+            <strong id="netBalance" class="balance-text">₹0</strong>
+          </div>
+        </div>
+
+        <div class="filters card">
+          <label>Filter Transactions</label>
+          <div class="filter-wrap">
+            <div class="row filter-row">
+              <select id="filterMonth">
+                <option value="all">All months</option>
+              </select>
+              <select id="filterCategory">
+                <option value="all">All categories</option>
+              </select>
+              <input id="searchText" type="search" placeholder="Search category, note or amount..." />
+            </div>
+            <div class="row small-controls">
+              <select id="sortSelect">
+                <option value="latest">Sort: Latest</option>
+                <option value="amountHigh">Sort: Amount (High → Low)</option>
+                <option value="amountLow">Sort: Amount (Low → High)</option>
+              </select>
+              <button id="resetBtn" class="btn outline">Reset</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="right-panel">
+        <div class="card chart-card pie-card">
+          <div class="chart-head">
+            <h3>Spending by Category</h3>
+            <small id="chartMonthLabel"></small>
+          </div>
+          <div class="chart-wrap">
+            <canvas id="pieChart"></canvas>
+          </div>
+        </div>
+
+        <div class="card chart-card bar-card">
+          <div class="chart-head">
+            <h3>Monthly Income vs Expense</h3>
+          </div>
+          <div class="chart-wrap">
+            <canvas id="barChart"></canvas>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="tx-list-head">
+            <h3>Transactions</h3>
+            <small id="txCount"></small>
+          </div>
+          <ul id="txList" class="tx-list"></ul>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <small>Made with ❤️ by <strong>Neha Baghele</strong> • PocketWise v1.2.1</small>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
