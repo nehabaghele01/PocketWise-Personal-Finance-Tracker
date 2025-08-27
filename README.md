@@ -31,10 +31,10 @@ PocketWise is a lightweight, responsive web application designed to help users m
 ## 📸 Screenshots
 
 ### 🧾 Add Transaction Form
-![Add Transaction Form](screenshot1.png)
+![Add Transaction Form][screenshot](screenshot1.png)
 
 ### 📊 Spending Overview
-![Spending Overview](screenshot2.png)
+![Spending Overview][screenshot](screenshot2.png)
 
 
  
